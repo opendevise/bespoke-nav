@@ -1,6 +1,6 @@
 {
   "name": "bespoke-nav",
-  "version": "1.0.1-dev",
+  "version": "1.0.1",
   "description": "A composite plugin that combines the navigation plugins into a single plugin.",
   "homepage": "https://github.com/opendevise/bespoke-nav",
   "bugs": "https://github.com/opendevise/bespoke-nav/issues",

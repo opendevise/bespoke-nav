@@ -1,5 +1,5 @@
 /*!
- * bespoke-nav v1.0.1-dev
+ * bespoke-nav v1.0.1
  *
  * Copyright 2015, Dan Allen
  * This content is released under the MIT license
