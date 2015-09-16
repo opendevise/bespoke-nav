@@ -16,14 +16,16 @@
   "scripts": {
     "test": "gulp"
   },
+  "dependencies": {
+    "bespoke-nav-kbd": "^1.0.0",
+    "bespoke-nav-touch": "^1.0.0"
+  },
   "peerDependencies": {
     "bespoke": ">=1.0.0"
   },
   "devDependencies": {
     "bespoke": "^1.0.0",
     "bespoke-classes": "^1.0.0",
-    "bespoke-nav-kbd": "^1.0.0",
-    "bespoke-nav-touch": "^1.0.0",
     "browserify": "^11.0.1",
     "browserify-istanbul": "^0.2.1",
     "del": "^1.2.0",
