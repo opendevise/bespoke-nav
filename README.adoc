@@ -18,7 +18,7 @@ A composite plugin that consolidates the navigation plugins for http://markdalgl
 
 == Example
 
-//http://opendevise.github.io/bespoke-nav[View the demo] online.
+http://opendevise.github.io/bespoke-nav[View the demo] online.
 
 This repository includes a demo folder the shows this plugin in action.
 To view it locally, you first need to clone this repository:
@@ -63,6 +63,16 @@ When using a browser global:
 ```js
 bespoke.from('.deck', [
   bespoke.plugins.nav()
+]);
+```
+
+=== Options
+
+You can pass options to the bespoke-nav-kbd and bespoke-nav-touch plugins using the `kbd` and `touch` option keys, respectively.
+
+```js
+bespoke.from('.deck', [
+  nav({ kbd: {...}, touch: {...} })
 ]);
 ```
 
