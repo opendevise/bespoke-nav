@@ -1,0 +1,71 @@
+= bespoke-nav
+Dan Allen <https://github.com/mojavelinux>
+// Settings:
+:idprefix:
+:idseparator: -
+//ifdef::env-github[:badges:]
+// Variables:
+:release-version: master
+// URIs:
+:uri-raw-file-base: https://raw.githubusercontent.com/opendevise/bespoke-nav/{release-version}
+
+ifdef::badges[]
+image:https://img.shields.io/npm/v/bespoke-nav.svg[npm package, link=https://www.npmjs.com/package/bespoke-nav]
+image:https://img.shields.io/travis/opendevise/bespoke-nav/master.svg[Build Status (Travis CI), link=https://travis-ci.org/opendevise/bespoke-nav]
+endif::[]
+
+A composite plugin that consolidates the navigation plugins for http://markdalgleish.com/projects/bespoke.js[Bespoke.js] (https://www.npmjs.com/package/bespoke-nav-kbd[bespoke-nav-kbd] and https://www.npmjs.com/package/bespoke-nav-touch[bespoke-nav-touch]) into a single plugin.
+
+== Example
+
+//http://opendevise.github.io/bespoke-nav[View the demo] online.
+
+This repository includes a demo folder the shows this plugin in action.
+To view it locally, you first need to clone this repository:
+
+ $ git clone https://github.com/opendevise/bespoke-nav && cd bespoke-nav
+
+Next, install the dependencies inside the project folder using npm:
+
+ $ npm install
+
+Finally, visit the file [path]_demo/index.html_ in your browser to see the plugin in action.
+
+== Download
+
+Download the {uri-raw-file-base}/dist/bespoke-nav.min.js[production mode version] or the {uri-raw-file-base}/dist/bespoke-nav.js[development mode version], or use a package manager.
+
+=== npm
+
+ $ npm install bespoke-nav
+
+=== Bower
+
+ $ bower install bespoke-nav
+
+== Usage
+
+This plugin is shipped in a https://github.com/umdjs/umd[UMD format], meaning it is available as a CommonJS/AMD module or as a browser global.
+
+For example, when using CommonJS modules:
+
+```js
+var bespoke = require('bespoke'),
+  nav = require('bespoke-nav');
+
+bespoke.from('.deck', [
+  nav()
+]);
+```
+
+When using a browser global:
+
+```js
+bespoke.from('.deck', [
+  bespoke.plugins.nav()
+]);
+```
+
+== License
+
+http://en.wikipedia.org/wiki/MIT_License[MIT License]
