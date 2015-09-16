@@ -1,6 +1,6 @@
 {
   "name": "bespoke-nav",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "A composite plugin that combines the navigation plugins into a single plugin.",
   "homepage": "https://github.com/opendevise/bespoke-nav",
   "bugs": "https://github.com/opendevise/bespoke-nav/issues",
@@ -56,5 +56,5 @@
   "keywords": [
     "bespoke-plugin"
   ],
-  "readme": "# bespoke-nav\n\nA composite plugin that consolidates the navigation plugins [bespoke-nav-kbd](https://www.npmjs.com/package/bespoke-nav-kbd) and [bespoke-nav-touch](https://www.npmjs.com/package/bespoke-nav-touch) into a single plugin.\n\n## Usage\n\nThis plugin is shipped in a [UMD format](https://github.com/umdjs/umd), meaning it is available as a CommonJS/AMD module or as a browser global.\n\nFor example, when using CommonJS modules:\n\n```js\nvar bespoke = require('bespoke'),\n  nav = require('bespoke-nav');\n\nbespoke.from('.deck', [\n  nav()\n]);\n```\n\nWhen using browser globals:\n\n```js\nbespoke.from('.deck', [\n  bespoke.plugins.nav()\n]);\n```\n\nFor more information about options and how the plugin works, see the [complete README](https://github.com/opendevise/bespoke-nav/blob/master/README.adoc).\n\n## License\n\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\n"
+  "readme": "# bespoke-nav\n\nA composite plugin that combines the navigation plugins for [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) ([bespoke-nav-kbd](https://www.npmjs.com/package/bespoke-nav-kbd) and [bespoke-nav-touch](https://www.npmjs.com/package/bespoke-nav-touch)) into a single plugin.\n\n## Usage\n\nThis plugin is shipped in a [UMD format](https://github.com/umdjs/umd), meaning it is available as a CommonJS/AMD module or as a browser global.\n\nFor example, when using CommonJS modules:\n\n```js\nvar bespoke = require('bespoke'),\n  nav = require('bespoke-nav');\n\nbespoke.from('.deck', [\n  nav()\n]);\n```\n\nWhen using browser globals:\n\n```js\nbespoke.from('.deck', [\n  bespoke.plugins.nav()\n]);\n```\n\nFor more information about options and how the plugin works, see the [complete README](https://github.com/opendevise/bespoke-nav/blob/master/README.adoc).\n\n## License\n\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\n"
 }

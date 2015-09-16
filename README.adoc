@@ -1,11 +1,12 @@
 = bespoke-nav
 Dan Allen <https://github.com/mojavelinux>
+v1.0.0
 // Settings:
 :idprefix:
 :idseparator: -
-//ifdef::env-github[:badges:]
+ifdef::env-github[:badges:]
 // Variables:
-:release-version: master
+:release-version: v1.0.0
 // URIs:
 :uri-raw-file-base: https://raw.githubusercontent.com/opendevise/bespoke-nav/{release-version}
 
@@ -14,7 +15,7 @@ image:https://img.shields.io/npm/v/bespoke-nav.svg[npm package, link=https://www
 image:https://img.shields.io/travis/opendevise/bespoke-nav/master.svg[Build Status (Travis CI), link=https://travis-ci.org/opendevise/bespoke-nav]
 endif::[]
 
-A composite plugin that consolidates the navigation plugins for http://markdalgleish.com/projects/bespoke.js[Bespoke.js] (https://www.npmjs.com/package/bespoke-nav-kbd[bespoke-nav-kbd] and https://www.npmjs.com/package/bespoke-nav-touch[bespoke-nav-touch]) into a single plugin.
+A composite plugin that combines the navigation plugins for http://markdalgleish.com/projects/bespoke.js[Bespoke.js] (https://www.npmjs.com/package/bespoke-nav-kbd[bespoke-nav-kbd] and https://www.npmjs.com/package/bespoke-nav-touch[bespoke-nav-touch]) into a single plugin.
 
 == Example
 
