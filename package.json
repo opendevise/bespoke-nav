@@ -17,8 +17,8 @@
     "test": "gulp"
   },
   "dependencies": {
-    "bespoke-nav-kbd": "^1.0.0",
-    "bespoke-nav-touch": "^1.0.0"
+    "bespoke-nav-kbd": "^1.0.3",
+    "bespoke-nav-touch": "^1.0.1"
   },
   "peerDependencies": {
     "bespoke": ">=1.0.0"

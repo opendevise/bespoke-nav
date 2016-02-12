@@ -19,15 +19,15 @@ module.exports = function(opts) {
 },{"bespoke-nav-kbd":2,"bespoke-nav-touch":3}],2:[function(require,module,exports){
 module.exports = function() {
   return function(deck) {
-    var KEY_SB = 32, KEY_PGUP = 33, KEY_PGDN = 34, KEY_END = 35, KEY_HME = 36,
-        KEY_LT = 37, KEY_RT = 39, KEY_H = 72, KEY_L = 76,
-      isModifierPressed = function(e, keyCode) {
-        return e.ctrlKey || (e.shiftKey && keyCode !== KEY_SB) || e.altKey || e.metaKey;
+    var KEY_SP = 32, KEY_PGUP = 33, KEY_PGDN = 34, KEY_END = 35, KEY_HME = 36,
+        KEY_LT = 37, KEY_RT = 39, KEY_H = 72, KEY_L = 76, KD = 'keydown',
+      modified = function(e, k) {
+        return e.ctrlKey || (e.shiftKey && (k === KEY_HME || k === KEY_END)) || e.altKey || e.metaKey;
       },
-      onKeydown = function(e) {
-        if (!isModifierPressed(e, e.which)) {
+      onKey = function(e) {
+        if (!modified(e, e.which)) {
           switch(e.which) {
-            case KEY_SB: return e.shiftKey ? deck.prev() : deck.next();
+            case KEY_SP: return (e.shiftKey ? deck.prev : deck.next)();
             case KEY_RT: case KEY_PGDN: case KEY_L: return deck.next();
             case KEY_LT: case KEY_PGUP: case KEY_H: return deck.prev();
             case KEY_HME: return deck.slide(0);
@@ -35,35 +35,28 @@ module.exports = function() {
           }
         }
       };
-    deck.on('destroy', function() { document.removeEventListener('keydown', onKeydown); });
-    document.addEventListener('keydown', onKeydown);
+    deck.on('destroy', function() { document.removeEventListener(KD, onKey); });
+    document.addEventListener(KD, onKey);
   };
 };
 
 },{}],3:[function(require,module,exports){
-module.exports = function(opts) {
+module.exports = function(options) {
   return function(deck) {
-    opts = opts || {};
-    var TOUCHSTART = 'touchstart', TOUCHMOVE = 'touchmove', start = null,
-      axis = 'page' + (opts.axis && ['x', 'y'].indexOf(opts.axis) !== -1 ? opts.axis.toUpperCase() : 'X'),
-      gap = (typeof opts.threshold === 'number' ? Math.abs(opts.threshold) : Math.ceil(50 / window.devicePixelRatio)),
-      onTouchstart = function(e) {
-        if (e.touches.length === 1) start = e.touches[0][axis];
-      },
-      onTouchmove = function(e) {
-        if (start === null) return;
-        var delta = e.touches[0][axis] - start;
-        if (Math.abs(delta) > gap) {
-          deck[delta > 0 ? 'prev' : 'next']();
-          start = null;
+    var opts = (options || {}), TS = 'touchstart', TM = 'touchmove', ADD = 'addEventListener', RM = 'removeEventListener',
+      src = deck.parent, start = null, delta = null, axis = 'page' + (opts.axis === 'y' ? 'Y' : 'X'),
+      gap = typeof opts.threshold === 'number' ? opts.threshold : 50 / window.devicePixelRatio,
+      onStart = function(e) { start = e.touches.length === 1 ? e.touches[0][axis] : null; },
+      onMove = function(e) {
+        if (start === null) return; // not ours
+        if (start === undefined) return e.preventDefault(); // action already taken
+        if (Math.abs(delta = e.touches[0][axis] - start) > gap) {
+          (delta > 0 ? deck.prev : deck.next)();
+          start = e.preventDefault(); // mark action taken
         }
       };
-    deck.on('destroy', function() {
-      deck.parent.removeEventListener(TOUCHSTART, onTouchstart);
-      deck.parent.removeEventListener(TOUCHMOVE, onTouchmove);
-    });
-    deck.parent.addEventListener(TOUCHSTART, onTouchstart);
-    deck.parent.addEventListener(TOUCHMOVE, onTouchmove);
+    deck.on('destroy', function() { src[RM](TS, onStart); src[RM](TM, onMove); });
+    src[ADD](TS, onStart); src[ADD](TM, onMove);
   };
 };
 
