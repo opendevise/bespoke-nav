@@ -34,26 +34,17 @@ module.exports = function(config) {
 
     autoWatch: false,
 
-    customLaunchers: { 
-      PhantomJS_custom: {
+    customLaunchers: {
+      PhantomJS_16x9: {
         base: 'PhantomJS',
-        options: {
-          viewportSize: { width: 1280, height: 720 }
-        },
-      },
-      PhantomJS_debug: {
-        base: 'PhantomJS',
-        options: {
-          viewportSize: { width: 1280, height: 720 }
-        },
-        debug: true
+        options: { viewportSize: { width: 1280, height: 720 } },
       }
     },
 
-    browsers: ['PhantomJS_custom']
-    //browsers: ['PhantomJS_debug']
+    //browsers: ['PhantomJS']
+    browsers: ['PhantomJS_16x9']
     //browsers: ['Firefox']
     //browsers: ['Chrome']
-    //browsers: ['PhantomJS_custom', 'Firefox', 'Chrome']
+    //browsers: ['PhantomJS_16x9', 'Firefox', 'Chrome']
   });
 };
