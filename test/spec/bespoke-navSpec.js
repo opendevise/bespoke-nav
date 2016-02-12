@@ -32,7 +32,9 @@ describe('bespoke-nav', function() {
       deck.parent.dispatchEvent(e);
     },
     swipe = function(axis, amount) {
-      touchEvent('start', axis == 'x' ? amount : 0, axis == 'x' ? 0 : amount);
+      var xAxis = axis === 'x', startX = xAxis ? amount : 0, startY = xAxis ? 0 : amount;
+      touchEvent('start', startX, startY);
+      touchEvent('move', Math.ceil(startX * 0.5), Math.ceil(startY * 0.5));
       touchEvent('move', 0, 0);
       touchEvent('end', 0, 0);
     },
