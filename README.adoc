@@ -1,11 +1,12 @@
 = bespoke-nav
 Dan Allen <https://github.com/mojavelinux>
+v1.0.2, 2016-02-12
 // Settings:
 :idprefix:
 :idseparator: -
 ifdef::env-github[:badges:]
 // Variables:
-:release-version: v1.0.1
+:release-version: v1.0.2
 // URIs:
 :uri-raw-file-base: https://raw.githubusercontent.com/opendevise/bespoke-nav/{release-version}
 
