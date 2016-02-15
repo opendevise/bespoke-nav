@@ -37,7 +37,7 @@ module.exports = function(config) {
     customLaunchers: {
       PhantomJS_16x9: {
         base: 'PhantomJS',
-        options: { viewportSize: { width: 1280, height: 720 } },
+        options: { viewportSize: { width: 1280, height: 720 } }
       }
     },
 
