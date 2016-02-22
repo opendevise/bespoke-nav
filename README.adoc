@@ -20,7 +20,7 @@ A composite plugin that combines the navigation plugins for http://markdalgleish
 
 http://opendevise.github.io/bespoke-nav[View the demo] online.
 
-This repository includes a demo folder the shows this plugin in action.
+This repository includes a demo folder that shows this plugin in action.
 To view it locally, you first need to clone this repository:
 
  $ git clone https://github.com/opendevise/bespoke-nav && cd bespoke-nav
